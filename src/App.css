@@ -1,0 +1,308 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1c20 0%, #2d3436 100%);
+  padding-top: 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.icon-button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 200% 200%;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon {
+  font-size: 18px;
+  color: white;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text {
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  color: white;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover states for buttons */
+.icon-button:hover {
+  width: 200px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, var(--start-color), var(--end-color));
+  box-shadow: 0 5px 15px rgba(var(--shadow-color), 0.4);
+  justify-content: flex-start;
+  padding: 0 20px;
+  background-size: 200% 200%;
+  background-position: right center;
+}
+
+.icon-button:hover .icon {
+  margin-right: 12px;
+}
+
+.icon-button:hover .button-text {
+  display: block;
+  opacity: 1;
+}
+
+/* Enhance the wave animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.icon-button {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Adjust animation delays for wave effect */
+.icon-button:nth-child(1) {
+  --start-color: #ff6b6b;
+  --end-color: #ff8e53;
+  --shadow-color: 255, 107, 107;
+  animation-delay: 0s;
+}
+
+.icon-button:nth-child(2) {
+  --start-color: #4facfe;
+  --end-color: #00f2fe;
+  --shadow-color: 79, 172, 254;
+  animation-delay: 0.4s;
+}
+
+.icon-button:nth-child(3) {
+  --start-color: #43e97b;
+  --end-color: #38f9d7;
+  --shadow-color: 67, 233, 123;
+  animation-delay: 0.8s;
+}
+
+.icon-button:nth-child(4) {
+  --start-color: #fa709a;
+  --end-color: #fee140;
+  --shadow-color: 250, 112, 154;
+  animation-delay: 1.2s;
+}
+
+.icon-button:nth-child(5) {
+  --start-color: #a166ab;
+  --end-color: #5073b8;
+  --shadow-color: 161, 102, 171;
+  animation-delay: 1.6s;
+}
+
+/* Add subtle pulse effect */
+.icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add these new styles */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  margin-top: -20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #1a1c20 0%, #2d3436 100%);
+}
+
+.profile-button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #6b5b95, #45425a);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.profile-button:hover {
+  width: 150px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #6b5b95, #45425a);
+  box-shadow: 0 5px 15px rgba(107, 91, 149, 0.4);
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.profile-button:hover .icon {
+  margin-right: 12px;
+}
+
+.profile-button:hover .button-text {
+  display: block;
+  opacity: 1;
+}
+
+.completion-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: white;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completion-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.content-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.content-section h1 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.content-section h2 {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.completion-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+}
+
+.starry-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: fallingStar linear infinite;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fallingStar {
+  0% {
+    transform: translate(0, -10vh) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(100vh, 100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Make sure content stays above stars */
+.nav-wrapper, .profile-content, .completion-container {
+  position: relative;
+  z-index: 1;
+}

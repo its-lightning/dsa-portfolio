@@ -1,0 +1,133 @@
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  transform: translateX(100px);
+}
+
+.profile-image-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: white;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+  color: #61dafb;
+}
+
+.detail-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.detail-value {
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.github:hover {
+  background: #24292e;
+}
+
+.linkedin:hover {
+  background: #0077b5;
+}
+
+.hackerrank:hover {
+  background: #2ec866;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 20px;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-link {
+    width: 100%;
+    justify-content: center;
+  }
+} 
